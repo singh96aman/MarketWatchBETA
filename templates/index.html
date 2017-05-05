@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+      <meta charset="UTF-8">
+    <title>Market Watch!</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+</head>
+<body>
+<br>
+<div class="jumbotron" align="center">
+    <form action="" method="POST">
+                <p><h1>Welcome to MARKET WATCH</h1></p>
+                {% if session_user_name %}
+                    <p><h2>Hello        <b>{{ session_user_name }}</b></h2></p>
+                    <br>
+                    <p><a class="btn btn-lg btn-success" href="home" role="button">Home</a></p>
+                    <br>
+                {% endif %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+        <p class="lead"></p>
+    </form>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+          <h4>Stock market</h4>
+          <p>A stock market, equity market or share market is the aggregation of buyers and sellers (a loose network of economic transactions, not a physical facility or discrete entity) of stocks (also called shares), which represent ownership claims on businesses; these may include securities listed on a public stock exchange as well as those only traded privately. </p>
+
+          <h4>Bombay Stock Exchange</h4>
+          <p>The Bombay Stock Exchange (BSE) is an Indian stock exchange located at Dalal Street, Kala Ghoda, Mumbai (formerly Bombay), Maharashtra, India. It claims to be the world's fastest stock exchange, with a median trade speed of 6 microseconds. The BSE is the world's 11th largest stock exchange with an overall market capitalization of $1.43 Trillion as of March, 2016.[4] More than 5500 companies are publicly listed on the BSE.</p>
+
+          <h4>National Stock Exhange</h4>
+          <p>The National Stock Exchange of India Limited (NSE) is the leading stock exchange of India, located in Mumbai.NSE was established in 1992 as the first demutualized electronic exchange in the country. National Stock Exchange has a total market capitalization of more than US$1.41 trillion, making it the world’s 12th-largest stock exchange as of March 2016. NSE's flagship index 'The NIFTY 50' is used extensively by investors in India and around the world as a barometer of the Indian capital markets.</p>
+        </div>
+
+        <div class="col-lg-6">
+          <h4>Market Watch</h4>
+          <p>We are trying to simplifying Stocks by creating a Web API <b>Market Watch</b>. It will enable the user to focus on one or many companies and focus on their technical parameters.</p>
+
+          <h4>Support Vector Machines</h4>
+          <p>In machine learning, support vector machines are supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier.</p>
+
+          <h4>FLASK, MYSQL</h4>
+          <p>Flask is a micro web framework written in Python. MySQL is an open-source relational database management system (RDBMS).</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; Market Watch</p>
+      </footer>
+
+    </div>
+</body>
+</html>

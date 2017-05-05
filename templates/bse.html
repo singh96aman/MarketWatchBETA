@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>National Stock Exhange</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+</head>
+<body>
+<br>
+<br>
+<img src="/static/sensex.png" align="right" style="max-width: 600px; max-height: 600px; padding: 10px 50px 0px 0px"/>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 style="padding: 0px 0px 50px 50px">Bombay Stock Exchange(BSE)</h1>
+<br>
+<br>
+<form action="" method="POST">
+<div class="input-group" style="padding: 0px 400px 0px 400px">
+  <span class="input-group-addon" id="basic-addon3">Enter Company Id to Check Stocks</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="companyname" id="companyname">
+</div>
+    <br>
+    <br>
+<div class="input-group" style="padding: 0px 400px 0px 400px">
+    <span class="input-group-addon" id="basic-addon3">Enter Company Id to Add to Market Watch</span>
+  <input type="text" class="form-control" name="addcompany" id="companyname" aria-describedby="basic-addon3">
+    </div>
+    <br>
+    <div style="padding: 0px 100px 0px 100px" align="center">
+        <input type="Submit" value="See Stocks or Add Companies" class="btn btn-danger" role="button">
+        <br>
+        <br>
+    </div>
+    </form>
+
+<div>
+<table class="table">
+<thead class="thead-inverse">
+    <tr>
+      <th>Company Id</th>
+      <th>Company Name</th>
+      <th>Company Stock Symbol</th>
+    </tr>
+  </thead>
+<tbody>
+{% for item in items %}
+    <tr>
+        <td>{{item.C_id}}</td>
+        <td>{{item.Cname}}</td>
+        <td>{{item.Sname}}</td>
+    </tr>
+{% endfor %}
+ </tbody>
+</table>
+</div>
+<br>
+<br>
+</table>
+</body>
+</html>

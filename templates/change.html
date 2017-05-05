@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cover.css') }}">
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</head>
+
+<body>
+<div>
+      <form action="" method="POST">
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+
+    <div class="container">
+<br>
+          <br>
+          <br>
+        <br>
+          <br>
+          <br>
+      <form class="form-signin">
+        <h2 class="form-signin-heading" align="center">Please Change Your Password</h2>
+          <br>
+          <br>
+        <label for="text" class="sr-only">User Name</label>
+        <input type="text" name="signupusername" id="user" class="form-control" placeholder="Enter Username" required autofocus name="username">
+          <br>
+          <br>
+        <label for="inputPassword" class="sr-only">New Password</label>
+        <input type="password" id="pass" name="signuppassword" class="form-control" placeholder="Enter Password" required name="password">
+          <br>
+          <br>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+            <br>
+          <br>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Change Password</button>
+      </form>
+
+    </div> <!-- /container -->
+                </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cover.css') }}">
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</head>
+
+<body>
+<form action="" method="POST">
+                    {% if error %}
+                        <p class=error><strong>Error:</strong> {{ error }}
+                    {% endif %}
+<br>
+<br>
+<br>
+<h1 class="display-1" align="center" style="color: #c9302c">MARKET WATCH</h1>
+<div>
+    <div class="container">
+          <br>
+          <br>
+      <form class="form-signin">
+        <h2 class="form-signin-heading" align="center">Please sign in</h2>
+          <br>
+          <br>
+        <label for="text" class="sr-only">Please Enter Your User Name</label>
+        <input type="text" id="username" class="form-control" placeholder="Enter UserName" required autofocus name="username">
+          <br>
+          <br>
+        <label for="inputPassword" class="sr-only">Please Enter Your Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password" required name="password">
+          <br>
+          <br>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+            <br>
+          <br>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <br>
+          <br>
+          <a href="signup">Not a User</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <a href="changepass">Change The Password</a>
+          <br><br>
+          <a href="delete">Delete User</a>
+          <br>
+          <br>
+      </form>
+    </div> <!-- /container -->
+                </form>
+
+</div>
+</body>
+</html>

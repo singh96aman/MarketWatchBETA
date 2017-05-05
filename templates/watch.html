@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>National Stock Exhange</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+</head>
+<body>
+<br>
+<h1 align="center">Your Portfolio</h1>
+<br>
+<div>
+<table class="table">
+<thead class="thead-inverse">
+    <tr>
+      <th>Company Id</th>
+      <th>Company Name</th>
+      <th>Company Stock Symbol</th>
+      <th>Volume</th>
+      <th>Close</th>
+      <th>Market Captial (Volume x Close)</th>
+    </tr>
+  </thead>
+<tbody>
+{% for item in marketwatch %}
+    <tr>
+        <td>{{item.C_id}}</td>
+        <td>{{item.Cname}}</td>
+        <td>{{item.Sname}}</td>
+        <td>{{item.Volume}}</td>
+        <td>{{item.Close}}</td>
+        <td>{{item.Capital}}</td>
+    </tr>
+{% endfor %}
+</table>
+<br>
+<br>
+<div align="center">
+<img src="/static/graph.png" align="center" style="max-width: 1000px; max-height: 1000px; padding: 10px 50px 0px 0px"/>
+</div>
+<br>
+<h2 align="center"><a href="comppredict">Check Our Predictions</a></h2>
+</div>
+</body>
+</html>

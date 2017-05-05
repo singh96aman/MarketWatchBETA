@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Your Company Selected</title>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+</head>
+<body>
+<br>
+<h1 align="center">Company Stocks</h1>
+<br>
+<div>
+<table class="table">
+<thead class="thead-inverse">
+    <tr>
+      <th>Date</th>
+      <th>Open</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Close</th>
+      <th>Volume</th>
+    </tr>
+  </thead>
+<tbody>
+{% for item in compdetails %}
+    <tr>
+        <td>{{item.dt}}</td>
+        <td>{{item.Open}}</td>
+        <td>{{item.High}}</td>
+        <td>{{item.Low }}</td>
+        <td>{{item.Close}}</td>
+        <td>{{item.Volume}}</td>
+    </tr>
+{% endfor %}
+ </tbody>
+</table>
+</div>
+</body>
+</html>

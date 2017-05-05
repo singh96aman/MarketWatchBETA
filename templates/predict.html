@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>
+        Predict it!
+    </title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+</head>
+<body>
+<br>
+<h1 align="center">Prediction Results</h1>
+<br>
+<div align="center">
+    <h2 align="center">Probabilty Of Movement Of Stock</h2>
+    {{ list_out[0]*100}}%
+    <br>
+    <h2 align="center">Direction Of Movement of Stock</h2>
+    {% for i in list_out[1] %}
+        {% if i==0 %}
+            <img src="/static/down.jpeg" align="center" style="max-width: 400px; max-height: 400px; padding: 10px 50px 0px 0px"/>
+        {% endif %}
+        {% if i==1 %}
+            <img src="/static/up.jpeg" align="center" style="max-width: 400px; max-height: 400px; padding: 10px 50px 0px 0px"/>
+        {% endif %}
+    {% endfor %}
+<h2>Technical Parameters from Support Vector Machines</h2>
+<br>
+<div>
+<table class="table">
+<thead class="thead-inverse">
+    <tr>
+      <th>Moving Average</th>
+      <th>Weighted Moving Average</th>
+      <th>Stochastic K%</th>
+      <th>Stochastic R%</th>
+      <th>Accumlator / Distributive Oscillator</th>
+      <th>Relative Strength Index</th>
+    </tr>
+  </thead>
+<tbody>
+    <tr>
+        <td>{{Tp[0][0]}}</td>
+        <td>{{Tp[0][1]}}</td>
+        <td>{{Tp[0][2]}}</td>
+        <td>{{Tp[0][3]}}</td>
+        <td>{{Tp[0][4]}}</td>
+        <td>{{Tp[0][5]}}</td>
+    </tr>
+ </tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
