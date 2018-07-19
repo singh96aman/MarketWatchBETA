@@ -7,7 +7,9 @@ app = Flask(__name__)
 #   DATABASE CONFIG   #
 #######################
 
-db = MySQLdb.connect(host="localhost", user="root", passwd="24singh96", db="stockmarket")
+#Change the password !
+
+db = MySQLdb.connect(host="localhost", user="root", passwd="password", db="stockmarket")
 cur = db.cursor()
 
 @app.route('/')
